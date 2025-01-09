@@ -6,9 +6,36 @@
     <title>Restaurant</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #162938, #1a1a1a);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+    </style>
 </head>
 <body>
-{% include 'nav.html'%}
+    <div class="welcome-container">
+        <!-- ლოგო -->
+        <a href="https://www.tbceducation.ge/"><img src="{{ url_for('static', filename='tbc.png') }}" alt="TBC Logo"></a>
+        <!-- სათაური -->
+        <h1>Welcome to Our shop center</h1>
+        <!-- აღწერა -->
+        <p>Your journey to everything ever starts here. Click below to explore!</p>
+        <!-- ღილაკი -->
+        <button id="welcome" class="status-btn">WELCOME</button>
+    </div>
 
+    <!-- JavaScript კოდი -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const welcomeBtn = document.getElementById('welcome');
+
+            welcomeBtn.addEventListener('click', function() {
+                window.location.href = "/menu";
+            });
+        });
+    </script>
 </body>
 </html>

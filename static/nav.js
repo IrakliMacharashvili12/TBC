@@ -1,17 +1,17 @@
 const hamburger = document.getElementById('hamburger');
-const navigation = document.getElementById('navigation');
+const navLinks = document.getElementById('nav-links');
 
-function toggleBurgerMenu(){
+function toggleMenu() {
     hamburger.classList.toggle('active');
-    navigation.classList.toggle('active');
+    navLinks.classList.toggle('active');
 }
 
-hamburger.addEventListener('click', toggleBurgerMenu);
+hamburger.addEventListener('click', toggleMenu);
 
-const navLinks = document.querySelectorAll('.nav-link');
-navLinks.forEach(link => {
-    link.addEventListener('click', () =>{
+const links = document.querySelectorAll('.nav-link');
+links.forEach(link => {
+    link.addEventListener('click', () => {
         hamburger.classList.remove('active');
-        navigation.classList.remove('active');
+        navLinks.classList.remove('active');
     });
 });

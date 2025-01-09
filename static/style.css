@@ -20,7 +20,6 @@ body {
     color: #f5f5f5;
 }
 
-
 h2, h3 {
     color: #ffffff;
 }
@@ -158,7 +157,7 @@ form button:hover {
 
 .navigation {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     background-color: #162938;
     padding: 15px 20px;
@@ -190,8 +189,14 @@ form button:hover {
     transition: background-color 0.3s ease;
 }
 
+.navbar-nav {
+    list-style-type: none;
+}
+
+
 .nav-link:hover {
     background-color: #575757;
+    color: #fff;
 }
 
 /* Hamburger Menu for Mobile */
@@ -232,29 +237,32 @@ form button:hover {
     }
 
     .nav-links {
+        display: none;
         position: fixed;
         top: 70px;
-        right: -100%;
+        right: 0;
         flex-direction: column;
         align-items: center;
         background-color: #162938;
         width: 100%;
         height: calc(100vh - 70px);
-        transition: right 0.3s ease;
         gap: 20px;
         padding-top: 20px;
+        z-index: 1000;
     }
 
     .nav-links.active {
+        display: flex;
         right: 0;
     }
-}}
-
-.person-name{
-color: #ffffff;
 }
-.person-email{
-color: #ffffff;
+
+.person-name {
+    color: #ffffff;
+}
+
+.person-email {
+    color: #ffffff;
 }
 
 .btn {
@@ -288,15 +296,52 @@ color: #ffffff;
 
 .product-card .add-to-cart {
     margin-top: 10px;
-
 }
 
-.img-fluid{
-width:200px;
-height:200px;
+.img-fluid {
+    width: 200px;
+    height: 200px;
 }
 
+/* Fix for spacing issues */
+.nav-link {
+    margin-left: 10px;
+    margin-right: 10px;
+}
 
-
-
-
+ .welcome-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .welcome-container h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        .welcome-container p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: #b0bec5;
+        }
+        .status-btn {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            background-color: #388e3c;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .status-btn:hover {
+            background-color: #2e7d32;
+        }
+        .welcome-container img {
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+        }

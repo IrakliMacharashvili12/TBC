@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sold Products</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="your-icon.png">
+</head>
+<body>
+  {% include 'nav_admin.html' %}
+    <div class="container mt-5">
+        <h1 class="text-center">Sold Products</h1>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Sold At</th>
+                    <th>User</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in sold_products %}
+                    <tr>
+                        <td>{{ product.id }}</td>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.price }}</td>
+                        <td>{{ product.quantity }}</td>
+                        <td>{{ product.sold_at }}</td>
+                        <td>
+                            {% if product.user %}
+                                {{ product.user.name }}
+                            {% else %}
+                                No user assigned
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="mt-4">
+            <h4>Total Sales: ${{ total_sales }}</h4>
+            <h4>Total Quantity Sold: {{ total_quantity }}</h4>
+        </div>
+    </div>
+</body>
+</html>

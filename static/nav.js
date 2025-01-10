@@ -1,5 +1,5 @@
 const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('nav-links');
+const navLinks = document.getElementById('nav-links'); // Use the correct id here
 
 function toggleMenu() {
     hamburger.classList.toggle('active');

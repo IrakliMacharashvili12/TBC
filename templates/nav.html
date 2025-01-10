@@ -10,17 +10,20 @@
 <body>
     <div class="body">
         <header>
-            <nav id="navigation" class="navigation">
-                <a href="https://www.tbceducation.ge/" class="tbc_logo"><img src="{{ url_for('static', filename='tbc.png') }}"></a>
-                <a href="/menu" class="nav-link">Menu</a>
-                <a href="/register" class="nav-link">Registration</a>
-                <a href="/person" class="nav-link">Person</a>
-                <a href="/cart" class="nav-link">Cart</a>
-                {% if 'user_id' in session and session.get('email') == 'admin@example.com' %}
-                    <a class="nav-link" href="/admin/sold_products">Sold Products</a>
-                {% endif %}
+           <nav id="nav-links" class="navigation">
+    <a href="https://www.tbceducation.ge/" class="tbc_logo">
+        <img src="{{ url_for('static', filename='tbc.png') }}" alt="TBC Logo">
+    </a>
+    <a href="/menu" class="nav-link">Menu</a>
+    <a href="/register" class="nav-link">Registration</a>
+    <a href="/person" class="nav-link">Person</a>
+    <a href="/cart" class="nav-link">Cart</a>
+    {% if 'user_id' in session and session.get('email') == 'admin@example.com' %}
+        <a class="nav-link" href="/admin/sold_products">Sold Products</a>
+    {% endif %}
+</nav>
 
-            </nav>
+
             <div class="hamburger" id="hamburger">
                 <div class="bar"></div>
                 <div class="bar"></div>

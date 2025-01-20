@@ -155,3 +155,4 @@ def admin_sold_products():
         total_sales=total_sales,
         total_quantity=total_quantity
     )
+
